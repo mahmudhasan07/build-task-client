@@ -2,6 +2,9 @@ import useServer from "../Hooks/useServer";
 import loader from "../../../public/Animation/Loader.json"
 import Lottie from "lottie-react";
 import { NavLink } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
 const Tasks = () => {
@@ -24,9 +27,11 @@ const Tasks = () => {
 };
 
 const Card = ({ card, id }) => {
-    console.log(card);
+    useEffect(()=>{
+        AOS.init()
+    },[])
     return (
-        <div className="w-80 p-2 border-2 border-black">
+        <div data-aos="fade-right" data-aos-delay={`${id*300}`} data-aos-easing="ease-in-sine" className="w-80 p-2 border-2 border-black">
             <img className="w-80 h-64" src={card.image} alt="" />
             <h1>{card.tittle}</h1>
             <p><span>Level:</span>{card.level}</p>

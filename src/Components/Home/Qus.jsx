@@ -1,12 +1,17 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Qus = () => {
+    useEffect(()=>{
+        AOS.init()
+    },[])
     return (
         <section className="flex flex-wrap">
-            <div className="lg:w-1/2">
+            <div data-aos="fade-right" data-aos-delay={`200`} className="lg:w-1/2">
                 <img className=" lg:w-2/3 mx-auto rounded-2xl" src="https://i.ibb.co/0QGSMb1/Qus1.png" alt="" />
             </div>
-            <div className="lg:w-1/2">
+            <div data-aos="fade-right" data-aos-delay={`500`} data-aos-easing="ease-in-sine" className="lg:w-1/2">
                 <div className="collapse collapse-arrow bg-base-200">
                     <input type="radio" name="my-accordion-2" checked="checked" />
                     <div className="collapse-title text-xl font-medium">

@@ -8,12 +8,12 @@ const DashBoard = () => {
     return (
         <section >
             <div className="flex flex-wrap lg:gap-20">
-                <div className="bg-blue-600 w-1/5 h-screen align-middle flex flex-col justify-center">
+                <div className="bg-blue-600 lg:w-1/5 w-full lg:h-screen align-middle flex lg:flex-col  justify-center">
                     
                     
                     <div className="">
                         {/* layOut section */}
-                        <ul className="text-lg font-semibold w-1/2  mx-auto">
+                        <ul className="text-lg font-semibold w-1/2 flex lg:flex-col gap-2  mx-auto">
                         <NavLink to={`/dashboard`}><li>Profile</li></NavLink>
                         <NavLink to={`create-task`}><li>Create Task</li></NavLink>
                         <NavLink to={`previews-task`}><li>Previews Task</li></NavLink>
@@ -24,7 +24,7 @@ const DashBoard = () => {
                     </div>
                     </div>
                 </div>
-                <div className="w-3/5  border-2">
+                <div className="lg:w-3/5  ">
                     <Outlet></Outlet>
                 </div>
             </div>
